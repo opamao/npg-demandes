@@ -5,15 +5,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+    <meta name="author" content="Théodore YAPI - theodoreyapi@gmail.com">
 
-    <title>Kanakku - Bootstrap Admin HTML Template</title>
+    <title>GANDOUR - Gestion de commandes</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="{{ URL::asset('') }}assets/img/favicon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ URL::asset('') }}assets/css/bootstrap.min.css">
 
     <!-- Font family -->
     <style type="text/css">
@@ -586,17 +586,17 @@
     </style>
 
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{{ URL::asset('') }}assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="{{ URL::asset('') }}assets/plugins/fontawesome/css/all.min.css">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ URL::asset('') }}assets/css/style.css">
 
     <!-- Layout Js -->
-    <script src="assets/js/layout.js" type="27150c5752b1fd68cef898e1-text/javascript"></script>
+    <script src="{{ URL::asset('') }}assets/js/layout.js" type="27150c5752b1fd68cef898e1-text/javascript"></script>
 </head>
 
-<body>
+<body style="background-color: #018ea963;">
 
     <!-- Main Wrapper -->
     <div class="main-wrapper login-body">
@@ -609,18 +609,19 @@
                         <div class="login-right-wrap">
                             @include('components.language-switch')
                             <br>
-                            <h1>Login</h1>
-                            <p class="account-subtitle">Access to our dashboard</p>
-                            <form action="#">
+                            <h1>{{ __('messages.login') }}</h1>
+                            <p class="account-subtitle">{{ __('messages.access') }}</p>
+                            <form action="{{ url('index') }}">
+                                @csrf
                                 <div class="input-block mb-3">
-                                    <label class="form-control-label">Email Address</label>
+                                    <label class="form-control-label">{{ __('messages.adress_email') }}</label>
                                     <input type="email" class="form-control">
                                 </div>
                                 <div class="input-block mb-3">
-                                    <label class="form-control-label">Password</label>
+                                    <label class="form-control-label"></label>
                                     <div class="pass-group">
                                         <input type="password" class="form-control pass-input">
-                                        <span class="fas fa-eye toggle-password"></span>
+                                        <span class="fas fa-eye toggle-password">{{ __('messages.password') }}</span>
                                     </div>
                                 </div>
                                 <div class="input-block mb-3">
@@ -628,15 +629,18 @@
                                         <div class="col-6">
                                             <div class="form-check custom-checkbox">
                                                 <input type="checkbox" class="form-check-input" id="cb1">
-                                                <label class="custom-control-label" for="cb1">Remember me</label>
+                                                <label class="custom-control-label"
+                                                    for="cb1">{{ __('messages.remember') }}</label>
                                             </div>
                                         </div>
-                                        <div class="col-6 text-end">
-                                            <a class="forgot-link" href="{{ url('forgot') }}">Forgot Password ?</a>
-                                        </div>
+                                        {{-- <div class="col-6 text-end">
+                                            <a class="forgot-link"
+                                                href="{{ url('forgot') }}">{{ __('messages.forgot') }}</a>
+                                        </div> --}}
                                     </div>
                                 </div>
-                                <button class="btn btn-lg  btn-primary w-100" type="submit">Login</button>
+                                <button class="btn btn-lg  btn-primary w-100"
+                                    type="submit">{{ __('messages.login') }}</button>
                             </form>
                         </div>
                     </div>
@@ -648,17 +652,17 @@
 
     <!-- /Theme Setting -->
     <!-- jQuery -->
-    <script src="assets/js/jquery-3.7.1.min.js" type="27150c5752b1fd68cef898e1-text/javascript"></script>
+    <script src="{{ URL::asset('') }}assets/js/jquery-3.7.1.min.js" type="27150c5752b1fd68cef898e1-text/javascript"></script>
 
     <!-- Bootstrap Core JS -->
-    <script src="assets/js/bootstrap.bundle.min.js" type="27150c5752b1fd68cef898e1-text/javascript"></script>
+    <script src="{{ URL::asset('') }}assets/js/bootstrap.bundle.min.js" type="27150c5752b1fd68cef898e1-text/javascript"></script>
 
     <!-- Theme Settings JS -->
-    <script src="assets/js/theme-settings.js" type="27150c5752b1fd68cef898e1-text/javascript"></script>
-    <script src="assets/js/greedynav.js" type="27150c5752b1fd68cef898e1-text/javascript"></script>
+    <script src="{{ URL::asset('') }}assets/js/theme-settings.js" type="27150c5752b1fd68cef898e1-text/javascript"></script>
+    <script src="{{ URL::asset('') }}assets/js/greedynav.js" type="27150c5752b1fd68cef898e1-text/javascript"></script>
 
     <!-- Custom JS -->
-    <script src="assets/js/script.js" type="27150c5752b1fd68cef898e1-text/javascript"></script>
+    <script src="{{ URL::asset('') }}assets/js/script.js" type="27150c5752b1fd68cef898e1-text/javascript"></script>
 
     <script src="../../cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
         data-cf-settings="27150c5752b1fd68cef898e1-|49" defer></script>

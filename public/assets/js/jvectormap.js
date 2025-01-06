@@ -1,26 +1,26 @@
 !function($) {
     "use strict";
-	
+
 	$('#world_map').vectorMap({
 		map: 'world_mill',
-		scaleColors : ['#7539FF', '#7539FF'],
+		scaleColors : ['#018ea9', '#018ea9'],
 		normalizeFunction : 'polynomial',
 		hoverOpacity : 0.7,
 		hoverColor : false,
 		regionStyle : {
 			initial : {
-				fill : '#7638ff'
+				fill : '#018ea9'
 			}
 		},
 		backgroundColor : 'transparent'
 	});
-	
+
 	$('#usa').vectorMap({
 		map: 'us_aea',
 		backgroundColor: 'transparent',
 		regionStyle: {
 			initial: {
-				fill: '#7638ff'
+				fill: '#018ea9'
 			}
 		}
 	});
@@ -29,14 +29,14 @@
 		backgroundColor : 'transparent',
 		regionStyle : {
 			initial : {
-				fill : '#7638ff'
+				fill : '#018ea9'
 			}
 		}
 	});
 	$('#uk').vectorMap({map: 'uk_countries_mill',backgroundColor: 'transparent',
 			  regionStyle: {
 				initial: {
-				  fill: '#7638ff'
+				  fill: '#018ea9'
 				}
 			  }});
 	$('#russia').vectorMap({
@@ -44,7 +44,7 @@
 		backgroundColor: 'transparent',
 			  regionStyle: {
 				initial: {
-				  fill: '#7638ff'
+				  fill: '#018ea9'
 				}
 			  }});
 

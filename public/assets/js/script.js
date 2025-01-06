@@ -6,13 +6,13 @@ Version      : 1.0
 
 (function($) {
     "use strict";
-	
+
 	// Variables declarations
-	
+
 	var $wrapper = $('.main-wrapper');
 	var $pageWrapper = $('.page-wrapper');
 	var $slimScrolls = $('.slimscroll');
-	
+
 	// Sidebar
 	var Sidemenu = function () {
 		this.$menuItem = $('#sidebar-menu a');
@@ -21,7 +21,7 @@ Version      : 1.0
 	function init() {
 		var $this = Sidemenu;
 		$('#sidebar-menu a').on('click', function (e) {
-			if ($(this).parent().hasClass('submenu')) { 
+			if ($(this).parent().hasClass('submenu')) {
 				e.preventDefault();
 			}
 			if (!$(this).hasClass('subdrop')) {
@@ -42,22 +42,22 @@ Version      : 1.0
 		function readURL(input) {
 			if (input.files && input.files[0]) {
 				var reader = new FileReader();
-		
+
 				reader.onload = function (e) {
 					$('#cover-image').attr('src', e.target.result);
 				}
-		
+
 				reader.readAsDataURL(input.files[0]);
 			}
 		}
-		
+
 		$("#cover_upload").change(function(){
 			readURL(this);
 		});
 	}
 
 	// Sidebar popup overlay
-	
+
 	if($('.popup-toggle').length > 0) {
 		$(".popup-toggle").click(function(){
 			$(".toggle-sidebar").addClass("open-filter");
@@ -101,7 +101,7 @@ Version      : 1.0
 			  $(".viewall-Two").slideToggle(900);
 			});
 		});
-	} 
+	}
 
 	// image file upload image
 	if($('#blah').length > 0) {
@@ -118,7 +118,7 @@ Version      : 1.0
 			readURL(this);
 		});
 	}
-	
+
 	$(document).ready(function(){
 		$('#image_sign').change(function(){
 			$("#frames").html('');
@@ -135,7 +135,7 @@ Version      : 1.0
 	});
 	// Sidebar Initiate
 	init();
-	
+
 	// Mobile menu sidebar overlay
 	$('body').append('<div class="sidebar-overlay"></div>');
 	$(document).on('click', '#mobile_btn', function () {
@@ -149,20 +149,20 @@ Version      : 1.0
 		$('.invoice-blog').removeClass("active");
 		$(this).parent().parent().addClass("active");
 	});
-	
+
 	// Sidebar overlay
 	$(".sidebar-overlay").on("click", function () {
 		$wrapper.removeClass('slide-nav');
 		$(".sidebar-overlay").removeClass("opened");
 		$('html').removeClass('menu-opened');
 	});
-	
+
 	// Page Content Height
 	if ($('.page-wrapper').length > 0) {
 		var height = $(window).height();
 		$(".page-wrapper").css("min-height", height);
 	}
-	
+
 	// Page Content Height Resize
 	$(window).resize(function () {
 		if ($('.page-wrapper').length > 0) {
@@ -170,7 +170,7 @@ Version      : 1.0
 			$(".page-wrapper").css("min-height", height);
 		}
 	});
-	
+
 	// Select 2
 	if ($('.select').length > 0) {
 		$('.select').select2({
@@ -178,9 +178,9 @@ Version      : 1.0
 			width: '100%'
 		});
 	}
-	
+
 	// Datetimepicker
-	
+
 	if($('.datetimepicker').length > 0 ){
 		$('.datetimepicker').datetimepicker({
 			format: 'DD-MM-YYYY',
@@ -192,7 +192,7 @@ Version      : 1.0
 			}
 		});
 	}
-	
+
 	if($('.summernote').length > 0) {
 		//var editorheight = $('.editor-card').height()-100;
         $('.summernote').summernote({
@@ -218,7 +218,7 @@ Version      : 1.0
 
 
 	// Date Range Picker
-	
+
 	if($('.bookingrange').length > 0) {
 		var start = moment().subtract(6, 'days');
 		var end = moment();
@@ -258,13 +258,13 @@ Version      : 1.0
 	    }
 	  });
 	}
-	
+
 	if($('.datatable').length > 0) {
 		$('.datatable').DataTable({
 			"bFilter": false,
 			// "scrollX": true,
 			"autoWidth": false,
-			"sDom": 'fBtlpi', 
+			"sDom": 'fBtlpi',
 			"ordering": true,
 			"columnDefs": [ {
 				"targets": 'no-sort',
@@ -281,7 +281,7 @@ Version      : 1.0
 			initComplete: (settings, json)=>{
 				$('.dataTables_filter').appendTo('#tableSearch');
 				$('.dataTables_filter').appendTo('.search-input');
-			},	
+			},
 		});
 
 		$('.modal').on('shown.bs.modal', function (e) {
@@ -289,7 +289,7 @@ Version      : 1.0
 	    });
 	}
 
-	
+
 	// Sidebar Slimscroll
 
 	if ($slimScrolls.length > 0) {
@@ -298,7 +298,7 @@ Version      : 1.0
 			width: '100%',
 			position: 'right',
 			size: '7px',
-			color: '#7539FF',
+			color: '#018ea9',
 			allowPageScroll: false,
 			wheelStep: 10,
 			touchScrollStep: 100,
@@ -313,9 +313,9 @@ Version      : 1.0
 			$('.sidebar .slimScrollDiv').height(rHeight);
 		});
 	}
-	
+
 	// Password Show
-	
+
 	if($('.toggle-password').length > 0) {
 		$(document).on('click', '.toggle-password', function() {
 			$(this).toggleClass("fa-eye fa-eye-slash");
@@ -341,7 +341,7 @@ Version      : 1.0
 	}
 
 	// Check all email
-	
+
 	$(document).on('click', '#check_all', function() {
 		$('.checkmail').click();
 		return false;
@@ -357,13 +357,13 @@ Version      : 1.0
 			});
 		});
 	}
-	
+
 	// Mail important
-	
+
 	$(document).on('click', '.mail-important', function() {
 		$(this).find('i.fa').toggleClass('fa-star').toggleClass('fa-star-o');
 	});
-	
+
 	// Small Sidebar
 	$(document).on('click', '#toggle_btn', function () {
 		if ($('body').hasClass('mini-sidebar')) {
@@ -379,7 +379,7 @@ Version      : 1.0
 		}, 300);
 		return false;
 	});
-	
+
 	$(document).on('mouseover', function (e) {
 		e.stopPropagation();
 		if ($('body').hasClass('mini-sidebar') && $('#toggle_btn').is(':visible')) {
@@ -394,26 +394,26 @@ Version      : 1.0
 			return false;
 		}
 	});
-	
+
 	$(document).on('click', '#filter_search', function() {
 		$('#filter_inputs').slideToggle("slow");
 	});
-	
+
 	if($('.custom-file-container').length > 0) {
         //First upload
         var firstUpload = new FileUploadWithPreview('myFirstImage')
         //Second upload
         var secondUpload = new FileUploadWithPreview('mySecondImage')
 	}
-    
-	// Clipboard 
-	
+
+	// Clipboard
+
 	if($('.clipboard').length > 0) {
 		var clipboard = new Clipboard('.btn');
 	}
-	
+
 	// Summernote
-	
+
 	if($('#summernote').length > 0) {
         $('#summernote').summernote({
 		  height: 300,                 // set editor height
@@ -430,7 +430,7 @@ Version      : 1.0
                 items: [
                     'heading', '|',
                     'fontfamily', 'fontsize', '|',
-                    'alignment', '|', 
+                    'alignment', '|',
                     'fontColor', 'fontBackgroundColor', '|',
                     'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
                     'link', '|',
@@ -452,32 +452,32 @@ Version      : 1.0
 		} );
 	}
 	// Tooltip
-	
+
 	if($('[data-bs-toggle="tooltip"]').length > 0) {
 		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 		  return new bootstrap.Tooltip(tooltipTriggerEl)
 		})
 	}
-	
+
 	// Popover
-	
+
 	if($('.popover-list').length > 0) {
 		var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
 		var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 		  return new bootstrap.Popover(popoverTriggerEl)
 		})
 	}
-	
-	// Counter 
-	
+
+	// Counter
+
 	if($('.counter').length > 0) {
 	   $('.counter').counterUp({
 			delay: 20,
             time: 2000
        });
 	}
-	
+
 	if($('#timer-countdown').length > 0) {
 		$( '#timer-countdown' ).countdown( {
 			from: 180, // 3 minutes (3*60)
@@ -488,31 +488,31 @@ Version      : 1.0
 			autostart: true
 		});
 	}
-	
+
 	if($('#timer-countup').length > 0) {
 		$( '#timer-countup' ).countdown( {
 			from: 0,
-			to: 180 
+			to: 180
 		});
 	}
-	
+
 	if($('#timer-countinbetween').length > 0) {
 		$( '#timer-countinbetween' ).countdown( {
 			from: 30,
-			to: 20 
+			to: 20
 		});
 	}
-	
+
 	if($('#timer-countercallback').length > 0) {
 		$( '#timer-countercallback' ).countdown( {
 			from: 10,
 			to: 0,
 			timerEnd: function() {
 				this.css( { 'text-decoration':'line-through' } ).animate( { 'opacity':.5 }, 500 );
-			} 
+			}
 		});
 	}
-	
+
 	if($('#timer-outputpattern').length > 0) {
 		$( '#timer-outputpattern' ).countdown( {
 			outputPattern: '$day Days $hour Hour $minute Min $second Sec..',
@@ -526,7 +526,7 @@ Version      : 1.0
 	(function() {
 		if ($(window).width() > 992)
 			chatAppTarget.removeClass('chat-slide');
-		
+
 		$(document).on("click",".chat-window .chat-users-list a.chat-block",function () {
 			if ($(window).width() <= 992) {
 				chatAppTarget.addClass('chat-slide');
@@ -536,13 +536,13 @@ Version      : 1.0
 		$(document).on("click","#back_user_list",function () {
 			if ($(window).width() <= 992) {
 				chatAppTarget.removeClass('chat-slide');
-			}	
+			}
 			return false;
 		});
 	})();
 
 	// Checkbox Select
-	
+
 	$('.app-listing .selectbox').on("click", function() {
         $(this).parent().find('#checkboxes').fadeToggle();
         $(this).parent().parent().siblings().find('#checkboxes').fadeOut();
@@ -554,12 +554,12 @@ Version      : 1.0
     });
 
 	//Checkbox Select
-	
+
 	if($('.sortby').length > 0) {
 		var show = true;
 		var checkbox1 = document.getElementById("checkbox");
 		$('.selectboxes').on("click", function() {
-			
+
 			if (show) {
 				checkbox1.style.display = "block";
 				show = false;
@@ -567,7 +567,7 @@ Version      : 1.0
 				checkbox1.style.display = "none";
 				show = true;
 			}
-		});		
+		});
 	}
 
 	// Invoices Checkbox Show
@@ -583,7 +583,7 @@ Version      : 1.0
 	});
 
 	// Invoices Add More
-	
+
     $(".links-info-one").on('click','.service-trash', function () {
 		$(this).closest('.links-cont').remove();
 		return false;
@@ -595,7 +595,7 @@ Version      : 1.0
 				'<a href="#" class="service-trash"><i class="fe fe-minus-circle me-1"></i>Service Charge</a> <span>$4</span' +
 			'</div>' +
 		'</div>';
-		
+
         $(".links-info-one").append(experiencecontent);
         return false;
     });
@@ -611,13 +611,13 @@ Version      : 1.0
 				'<a href="#" class="service-trash-one"><i class="fe fe-minus-circle me-1"></i>Offer new</a> <span>$4 %</span' +
 			'</div>' +
 		'</div>';
-		
+
         $(".links-info-discount").append(experiencecontent);
         return false;
     });
 
     // Invoices Table Add More
-	
+
     $(".add-table-items").on('click','.remove-btn', function () {
 		$(this).closest('.add-row').remove();
 		return false;
@@ -649,7 +649,7 @@ Version      : 1.0
 				'<a href="javascript:void(0);" class="remove-btn"><i class="fe fe-trash-2"></i></a>' +
 			'</td>' +
 		'</tr>';
-		
+
         $(".add-table-items").append(experiencecontent);
         return false;
     });
@@ -661,7 +661,7 @@ Version      : 1.0
 	    	$('.sidebar-menu').addClass('sidebar-menu-ten');
 	    } else {
 	        $('.sidebar-menu').removeClass('sidebar-menu-ten');
-	       
+
 	    }
 	});
 
@@ -672,7 +672,7 @@ Version      : 1.0
 	    	$('.sidebar-menu').addClass('sidebar-menu-eleven');
 	    } else {
 	        $('.sidebar-menu').removeClass('sidebar-menu-eleven');
-	       
+
 	    }
 	});
 
@@ -683,7 +683,7 @@ Version      : 1.0
 	    	$('.sidebar-menu').addClass('sidebar-menu-twelve');
 	    } else {
 	        $('.sidebar-menu').removeClass('sidebar-menu-twelve');
-	       
+
 	    }
 	});
 
@@ -691,7 +691,7 @@ Version      : 1.0
 	if($('#mobile_code').length > 0) {
 		$( '#mobile_code' ).intlTelInput( {
 			initialCountry: "in",
-			separateDialCode: true,	
+			separateDialCode: true,
 		});
 	}
 
@@ -709,7 +709,7 @@ Version      : 1.0
 			  ],
 		});
     }
-	// Toggle 
+	// Toggle
 	if($('.toggle-password').length > 0) {
 		$(document).on('click', '.toggle-password', function() {
 			$(this).toggleClass("feather-eye feather-eye-off");
@@ -749,7 +749,7 @@ Version      : 1.0
 		prevTab.show();
 	});
 
-	// Kanban Sortable	
+	// Kanban Sortable
 	if($('.kanban-ticket-list').length > 0) {
 		$(".kanban-ticket-list").sortable({
 			connectWith: ".kanban-ticket-list",
@@ -774,7 +774,7 @@ Version      : 1.0
 				},
 				768:{
 					items:1,
-					
+
 				},
 				1119:{
 					items:1,
@@ -802,14 +802,14 @@ Version      : 1.0
 			var attributes = $.map(this.attributes, function(item) {
 			return item.name;
 			});
-		
+
 			var img = $(this);
 			$.each(attributes, function(i, item) {
 			img.removeAttr(item);
 			});
 		});
-	}	
-	
+	}
+
 	$(document).ready(function(){
 		$(document).on('click', '#sidebar-size-compact', function() {
 			$('html').attr("data-layout", "vertical");
@@ -843,11 +843,11 @@ Version      : 1.0
     $('ul.user-menu li a.toggle-switch').parent().css('display','none');
 
     $("#rtl[type='checkbox']").change(function(){
-	  var item=$(this);    
+	  var item=$(this);
 	  if(item.is(":checked"))
 	  {
 	    window.location.href='../template-rtl/index.html';
-	  }    
+	  }
 	});
 
 	$('#customer-name').on('change', function() {

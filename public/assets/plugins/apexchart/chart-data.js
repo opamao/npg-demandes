@@ -22,7 +22,7 @@ $(document).ready(function() {
     if($('#sales_chart').length > 0 ){
         var columnCtx = document.getElementById("sales_chart"),
         columnConfig = {
-            colors: ['#7638ff', '#fda600'],
+            colors: ['#018ea9', '#fda600'],
             series: [
                 {
                 name: "Received",
@@ -85,7 +85,7 @@ $(document).ready(function() {
     if($('#invoice_chart').length > 0 ){
         var pieCtx = document.getElementById("invoice_chart"),
         pieConfig = {
-            colors: ['#7638ff', '#ff737b', '#fda600', '#1ec1b0'],
+            colors: ['#018ea9', '#ff737b', '#fda600', '#1ec1b0'],
             series: [55, 40, 20, 10],
             chart: {
                 fontFamily: 'Poppins, sans-serif',
@@ -110,7 +110,7 @@ $(document).ready(function() {
         var pieChart = new ApexCharts(pieCtx, pieConfig);
         pieChart.render();
     }
-    
+
     // Simple Line
     if($('#s-line').length > 0 ){
     var sline = {
@@ -124,7 +124,7 @@ $(document).ready(function() {
           show: false,
         }
       },
-      colors: ['#7539FF'],
+      colors: ['#018ea9'],
       dataLabels: {
         enabled: false
       },
@@ -169,7 +169,7 @@ var sLineArea = {
           show: false,
         }
     },
-    colors: ['#7539FF', '#00e396'],
+    colors: ['#018ea9', '#00e396'],
     dataLabels: {
         enabled: false
     },
@@ -186,7 +186,7 @@ var sLineArea = {
 
     xaxis: {
         type: 'datetime',
-        categories: ["2018-09-19T00:00:00", "2018-09-19T01:30:00", "2018-09-19T02:30:00", "2018-09-19T03:30:00", "2018-09-19T04:30:00", "2018-09-19T05:30:00", "2018-09-19T06:30:00"],                
+        categories: ["2018-09-19T00:00:00", "2018-09-19T01:30:00", "2018-09-19T02:30:00", "2018-09-19T03:30:00", "2018-09-19T04:30:00", "2018-09-19T05:30:00", "2018-09-19T06:30:00"],
     },
     tooltip: {
         x: {
@@ -217,10 +217,10 @@ var sCol = {
         bar: {
             horizontal: false,
             columnWidth: '55%',
-            endingShape: 'rounded'  
+            endingShape: 'rounded'
         },
     },
-    colors: ['#7539FF', '#00e396'],
+    colors: ['#018ea9', '#00e396'],
     dataLabels: {
         enabled: false
     },
@@ -277,7 +277,7 @@ var sColStacked = {
           show: false,
         }
     },
-    colors: ['#7539FF', '#00e396', '#feb019', '#ff4560'],
+    colors: ['#018ea9', '#00e396', '#feb019', '#ff4560'],
     responsive: [{
         breakpoint: 480,
         options: {
@@ -337,7 +337,7 @@ var sBar = {
           show: false,
         }
     },
-    colors: ['#7539FF'],
+    colors: ['#018ea9'],
     plotOptions: {
         bar: {
             horizontal: true,
@@ -372,7 +372,7 @@ var options = {
       show: false,
     }
   },
-  colors: ['#7539FF', '#00e396'],
+  colors: ['#018ea9', '#00e396'],
   series: [{
     name: 'Website Blog',
     type: 'column',
@@ -425,7 +425,7 @@ var donutChart = {
           show: false,
         }
     },
-    colors: ['#7539FF', '#00e396', '#feb019', '#ff4560'],
+    colors: ['#018ea9', '#00e396', '#feb019', '#ff4560'],
     series: [44, 55, 41, 17],
     responsive: [{
         breakpoint: 480,
@@ -459,7 +459,7 @@ var radialChart = {
           show: false,
         }
     },
-    colors: ['#7539FF', '#00e396', '#feb019', '#ff4560'],
+    colors: ['#018ea9', '#00e396', '#feb019', '#ff4560'],
     plotOptions: {
         radialBar: {
             dataLabels: {
@@ -480,7 +480,7 @@ var radialChart = {
         }
     },
     series: [44, 55, 67, 83],
-    labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],    
+    labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],
 }
 
 var chart = new ApexCharts(
@@ -489,14 +489,14 @@ var chart = new ApexCharts(
 );
 
 chart.render();
-}   
+}
 
 
 if($('#earnings-chart').length > 0 ){
     var options = {
         series: [{
         name: "Earnings ",
-        colors: ['#7539FF'],
+        colors: ['#018ea9'],
         data: [{
           x: 'Jan',
           y: 40,
@@ -548,7 +548,7 @@ if($('#earnings-chart').length > 0 ){
       dataLabels: {
         enabled: false,
       },
-      colors: ['#7539FF'],
+      colors: ['#018ea9'],
       xaxis: {
         type: 'category',
         group: {
@@ -562,12 +562,12 @@ if($('#earnings-chart').length > 0 ){
           ]
         }
       },
-      
+
       };
 
       var chart = new ApexCharts(document.querySelector("#earnings-chart"), options);
       chart.render();
-}	
+}
 
 
 if($('#companies_flow').length > 0 ){
@@ -688,7 +688,7 @@ if($('#plane-chart').length > 0 ){
   var chart = new ApexCharts(document.querySelector("#plane-chart"), options);
   chart.render();
 }
-    
-    
-  
+
+
+
 });
