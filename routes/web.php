@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -8,3 +9,5 @@ Route::get('/', function () {
 Route::get('forgot', function () {
     return view('auth.forgot-password');
 });
+
+Route::post('language-switch', [LanguageController::class, 'languageSwitch'])->name('language.switch');

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="light" data-sidebar-size="lg"
-    data-sidebar-image="none">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-layout="vertical" data-topbar="light" data-sidebar="light"
+    data-sidebar-size="lg" data-sidebar-image="none">
 
 <head>
     <meta charset="utf-8">
@@ -607,6 +607,8 @@
                 <div class="loginbox">
                     <div class="login-right">
                         <div class="login-right-wrap">
+                            @include('components.language-switch')
+                            <br>
                             <h1>Login</h1>
                             <p class="account-subtitle">Access to our dashboard</p>
                             <form action="#">
@@ -630,7 +632,7 @@
                                             </div>
                                         </div>
                                         <div class="col-6 text-end">
-                                            <a class="forgot-link" href="{{ route('forgot') }}">Forgot Password ?</a>
+                                            <a class="forgot-link" href="{{ url('forgot') }}">Forgot Password ?</a>
                                         </div>
                                     </div>
                                 </div>
