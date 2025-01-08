@@ -168,17 +168,17 @@
                      <div class="subscription-menu">
                          <ul>
                              <li>
-                                 <a class="dropdown-item" href="profile.html">Profile</a>
+                                 <a class="dropdown-item" href="{{ url('profile') }}">Profile</a>
                              </li>
                              <li>
-                                 <a class="dropdown-item" href="settings.html">Settings</a>
+                                 <a class="dropdown-item" href="{{ url('settings') }}">Settings</a>
                              </li>
                          </ul>
                      </div>
                      <div class="subscription-logout">
                          <ul>
                              <li class="pb-0">
-                                 <a class="dropdown-item" href="login.html">Log Out</a>
+                                 <a class="dropdown-item" href="{{ url('/') }}">Log Out</a>
                              </li>
                          </ul>
                      </div>

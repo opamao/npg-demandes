@@ -53,7 +53,7 @@
                             <p>14 New Companies Subscribed Today</p>
                             <div class="dash-btns">
                                 <a href="companies.html" class="btn view-company-btn">View Companies</a>
-                                <a href="packages.html" class="btn view-package-btn">All Packages</a>
+                                {{-- <a href="packages.html" class="btn view-package-btn">All Packages</a> --}}
                             </div>
                             <div class="dash-img">
                                 <img src="assets/img/dashboard-card-img.png" alt="">

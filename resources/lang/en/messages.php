@@ -33,7 +33,7 @@ return [
     'invoice-list' => 'Invoices List',
     'invoice-detail' => 'Invoice Details',
     'recurring-invoices' => 'Recurring Invoices',
-    'credit-notes' => 'Credit Notes',
+    'credit-notes' => 'Positioned customers',
     'quotations' => 'Quotations',
     'delivery-challans' => 'Delivery Challans',
     'reports' => 'Reports',
@@ -45,4 +45,7 @@ return [
     'users' => 'Users',
     'roles-permission' => 'Roles & Permission',
     'delete-account' => 'Delete Account Request',
+    'oops' => 'Oops! Page not found!',
+    'not-found' => 'The page you requested was not found.',
+    'back' => 'Back',
 ];
