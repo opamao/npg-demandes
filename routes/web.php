@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\SignaturesController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -49,9 +51,7 @@ Route::get('units', function () {
 Route::get('inventory', function () {
     return view('inventory.inventory');
 });
-Route::get('signature-list', function () {
-    return view('signature.signature-list');
-});
+Route::resource('signature-list', SignaturesController::class);
 Route::get('invoices', function () {
     return view('invoices.invoices');
 });
@@ -109,9 +109,7 @@ Route::get('add-delivery-challans', function () {
 Route::get('edit-delivery-challans', function () {
     return view('quotations.edit-delivery-challans');
 });
-Route::get('users', function () {
-    return view('users.users');
-});
+Route::resource('users', UsersController::class);
 Route::get('roles-permission', function () {
     return view('users.roles-permission');
 });
