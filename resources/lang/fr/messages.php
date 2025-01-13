@@ -94,4 +94,9 @@ return [
     'total_invoice' => 'Total facture',
     'created' => 'Créé',
     'balance' => 'Montant',
+    'basic_detail' => 'Détails basiques',
+    'name' => 'Nom',
+    'website' => 'Site Web',
+    'currency' => 'Monnaie',
+    'select_currency' => 'Sélectionne la monnaie',
 ];

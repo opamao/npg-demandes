@@ -12,37 +12,38 @@
 
 @push('scripts')
     <!-- Feather Icon JS -->
-    <script src="{{ URL::asset('') }}assets/js/feather.min.js" type="f714bfb05fbdb3c5edb32043-text/javascript"></script>
+    <script src="{{ URL::asset('') }}assets/js/feather.min.js"></script>
 
     <!-- Slimscroll JS -->
-    <script src="{{ URL::asset('') }}assets/plugins/slimscroll/jquery.slimscroll.min.js" type="f714bfb05fbdb3c5edb32043-text/javascript"></script>
+    <script src="{{ URL::asset('') }}assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
     <!-- Select2 JS -->
-    <script src="{{ URL::asset('') }}assets/plugins/select2/js/select2.min.js" type="f714bfb05fbdb3c5edb32043-text/javascript"></script>
+    <script src="{{ URL::asset('') }}assets/plugins/select2/js/select2.min.js"></script>
 
     <!-- Intl Tell Input js -->
-    <script src="{{ URL::asset('') }}assets/plugins/intlTelInput/js/intlTelInput-jquery.min.js" type="f714bfb05fbdb3c5edb32043-text/javascript"></script>
+    <script src="{{ URL::asset('') }}assets/plugins/intlTelInput/js/intlTelInput-jquery.min.js"></script>
 @endpush
 
 @section('content')
     <!-- Page Wrapper -->
     <div class="page-wrapper">
         <div class="content container-fluid">
+            @include('layouts.status')
             <div class="card mb-0">
                 <div class="card-body">
                     <!-- Page Header -->
                     <div class="page-header">
                         <div class="content-page-header">
-                            <h5>Add Customer</h5>
+                            <h5>{{ __('messages.add_customer') }}</h5>
                         </div>
                     </div>
                     <!-- /Page Header -->
                     <div class="row">
                         <div class="col-md-12">
-                            <form action="#">
+                            <form action="{{ route('customers.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group-item">
-                                    <h5 class="form-title">Basic Details</h5>
+                                    <h5 class="form-title">{{ __('messages.basic_detail') }}</h5>
                                     <div class="profile-picture">
                                         <div class="upload-profile">
                                             <div class="profile-img">
@@ -59,7 +60,8 @@
                                                     <div class="img-upload">
                                                         <br>
                                                         <label class="btn btn-upload">
-                                                            Upload <input name="photo" type="file" id="avatar_upload">
+                                                            {{ __('messages.upload') }} <input name="photo" type="file"
+                                                                id="avatar_upload">
                                                         </label>
                                                     </div>
                                                 </label>
@@ -71,61 +73,68 @@
                                         <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="input-block mb-3">
                                                 <label>Code <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" placeholder="Enter Name">
+                                                <input required name="code" type="text" class="form-control"
+                                                    placeholder="Code">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="input-block mb-3">
-                                                <label>User name <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" placeholder="Enter Name">
+                                                <label>{{ __('messages.username') }} <span
+                                                        class="text-danger">*</span></label>
+                                                <input required name="username" type="text" class="form-control"
+                                                    placeholder="{{ __('messages.username') }}">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="input-block mb-3">
-                                                <label>Name <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" placeholder="Enter Name">
+                                                <label>{{ __('messages.name') }} <span class="text-danger">*</span></label>
+                                                <input required name="name" type="text" class="form-control"
+                                                    placeholder="{{ __('messages.name') }}">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="input-block mb-3">
-                                                <label>Email <span class="text-danger">*</span></label>
-                                                <input type="email" class="form-control"
-                                                    placeholder="Enter Email Address">
+                                                <label>{{ __('messages.email') }}</label>
+                                                <input type="email" class="form-control" name="email"
+                                                    placeholder="{{ __('messages.email') }}">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="input-block mb-3">
-                                                <label>Phone <span class="text-danger">*</span></label>
-                                                <input type="text" id="mobile_code" class="form-control"
-                                                    placeholder="Phone Number" name="name">
+                                                <label>{{ __('messages.phone') }}</label>
+                                                <input type="number" id="mobile_code" class="form-control"
+                                                    placeholder="{{ __('messages.phone') }}" name="phone">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="input-block mb-3">
-                                                <label>Website</label>
-                                                <input type="text" class="form-control"
-                                                    placeholder="Enter Website Address">
+                                                <label>{{ __('messages.website') }}</label>
+                                                <input type="text" class="form-control" name="website"
+                                                    placeholder="{{ __('messages.website') }}">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="input-block mb-3">
-                                                <label>Password <span class="text-danger">*</span></label>
-                                                <input type="password" id="mobile_code" class="form-control"
-                                                    placeholder="Password" name="name">
+                                                <label>{{ __('messages.password') }} <span
+                                                        class="text-danger">*</span></label>
+                                                <input required type="password" class="form-control"
+                                                    placeholder="{{ __('messages.password') }}" name="password">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="input-block mb-3">
-                                                <label>Confirm password <span class="text-danger">*</span></label>
-                                                <input type="password" id="mobile_code" class="form-control"
-                                                    placeholder="Password" name="name">
+                                                <label>{{ __('messages.confirm_password') }} <span
+                                                        class="text-danger">*</span></label>
+                                                <input required type="password" class="form-control"
+                                                    placeholder="{{ __('messages.confirm_password') }}" name="cpassword">
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6 col-sm-12">
                                             <div class="input-block mb-3">
-                                                <label>Currency</label>
-                                                <select class="select">
-                                                    <option value="">Select Currency</option>
+                                                <label>{{ __('messages.currency') }} <span
+                                                        class="text-danger">*</span></label>
+                                                <select name="currency" required class="select">
+                                                    <option value="">{{ __('messages.select_currency') }}</option>
                                                     <option value="xof">XOF</option>
                                                     <option value="$">$</option>
                                                     <option value="€">€</option>
@@ -135,8 +144,9 @@
                                     </div>
                                 </div>
                                 <div class="add-customer-btns text-end">
-                                    <a href="customers.html" class="btn customer-btn-cancel">Cancel</a>
-                                    <a href="customers.html" class="btn customer-btn-save">Save Changes</a>
+                                    <a href="javascript:history.back()"
+                                        class="btn customer-btn-cancel">{{ __('messages.cancel') }}</a>
+                                    <button type="submit" class="btn customer-btn-save">{{ __('messages.add') }}</button>
                                 </div>
                             </form>
                         </div>

@@ -93,4 +93,9 @@ return [
     'total_invoice' => 'Total Invoice',
     'created' => 'Created',
     'balance' => 'Balance',
+    'basic_detail' => 'Basic details',
+    'name' => 'Name',
+    'website' => 'Website',
+    'currency' => 'Currency',
+    'select_currency' => 'Select Currency',
 ];

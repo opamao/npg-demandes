@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\SignaturesController;
 use App\Http\Controllers\UsersController;
@@ -7,6 +8,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('auth.login');
+});
+Route::get('/l', function () {
+    return view('welcome');
 });
 Route::get('forgot', function () {
     return view('auth.forgot-password');
@@ -21,9 +25,7 @@ Route::get('dashboard', function () {
 Route::get('companies', function () {
     return view('dashboard.companies');
 });
-Route::get('customers', function () {
-    return view('customers.customers');
-});
+Route::resource('customers', CustomersController::class);
 Route::get('add-customer', function () {
     return view('customers.add-customer');
 });

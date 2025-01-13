@@ -119,7 +119,7 @@
                            {{ Request::is('add-quotations') ? 'active' : '' }}
                             {{ Request::is('edit-quotations') ? 'active' : '' }}"
                                href="{{ url('quotations') }}"><i class="fe fe-clipboard"></i>
-                               <span>{{ __('messages.quotations') }}</span></a>
+                               <span>{{ __('messages.gadget') }} & {{ __('messages.free') }}</span></a>
                        </li>
                        <li>
                            <a class="{{ Request::is('delivery-challans') ? 'active' : '' }}
@@ -140,7 +140,7 @@
                                <li><a class="{{ Request::is('free-report') ? 'active' : '' }}"
                                        href="{{ url('free-report') }}">{{ __('messages.free') }}</a></li>
                                <li><a class="{{ Request::is('gadget-report') ? 'active' : '' }}"
-                                       href="{{ url('gadget-report') }}">{{ __('messages.Gadget') }}</a></li>
+                                       href="{{ url('gadget-report') }}">{{ __('messages.gadget') }}</a></li>
                                <li><a class="{{ Request::is('order-report') ? 'active' : '' }}"
                                        href="{{ url('order-report') }}">{{ __('messages.orders') }}</a></li>
                                <li><a class="{{ Request::is('delivery-report') ? 'active' : '' }}"

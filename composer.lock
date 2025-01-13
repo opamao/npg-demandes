@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "626b9e7ddd47fb7eff9aaa53cce0c9ad",
+    "content-hash": "e85de1c25195acf02541899cbfe71f71",
     "packages": [
         {
             "name": "brick/math",
@@ -509,6 +509,63 @@
                 }
             ],
             "time": "2023-10-06T06:47:41+00:00"
+        },
+        {
+            "name": "elielelie/laravel-sap",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eliel-elie/laravel-sap.git",
+                "reference": "d716e7a0613686b3c13825e473f21b98664d766a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eliel-elie/laravel-sap/zipball/d716e7a0613686b3c13825e473f21b98664d766a",
+                "reference": "d716e7a0613686b3c13825e473f21b98664d766a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "alias": "Sap",
+                        "facade": "Elielelie\\Sap\\Facades\\Sap"
+                    },
+                    "providers": [
+                        "Elielelie\\Sap\\SapServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Elielelie\\Sap\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eliel Ferreira",
+                    "email": "eliel_elie@hotmail.com"
+                }
+            ],
+            "description": "SAP features integrated with Laravel.",
+            "keywords": [
+                "driver",
+                "laravel",
+                "php",
+                "sap"
+            ],
+            "support": {
+                "issues": "https://github.com/eliel-elie/laravel-sap/issues",
+                "source": "https://github.com/eliel-elie/laravel-sap/tree/v1.0.5"
+            },
+            "time": "2024-04-20T14:24:06+00:00"
         },
         {
             "name": "fruitcake/php-cors",

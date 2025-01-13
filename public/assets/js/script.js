@@ -688,12 +688,12 @@ Version      : 1.0
 	});
 
 	// Country Code Selection
-	if($('#mobile_code').length > 0) {
-		$( '#mobile_code' ).intlTelInput( {
-			initialCountry: "in",
-			separateDialCode: true,
-		});
-	}
+	// if($('#mobile_code').length > 0) {
+	// 	$( '#mobile_code' ).intlTelInput( {
+	// 		initialCountry: "ci",
+	// 		separateDialCode: true,
+	// 	});
+	// }
 
 	// Summernote
 	if($('.summernote').length > 0) {
