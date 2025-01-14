@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Signatures;
 use Illuminate\Http\Request;
 
 class SignaturesController extends Controller
@@ -27,7 +28,27 @@ class SignaturesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $roles = [
+            'libelle' => 'required',
+        ];
+        $customMessages = [
+            'libelle.required' => "Veuillez saisir le libelle de le pays",
+        ];
+        $request->validate($roles, $customMessages);
+
+        $fileSignatureExtension = $request->file('signature')->getClientOriginalName();
+        $imageSignature = 'signature_logo_' . time() . '_' . $fileSignatureExtension;
+        $request->file('signature')->move(public_path('/signatures'), $imageSignature);
+
+        $signature = new Signatures();
+        $signature->signature_name = $request->libelle;
+        $signature->signature = $imageSignature;
+
+        if ($signature->save()) {
+            return back()->with('succes',  "Vous avez ajouter " . $request->libelle);
+        } else {
+            return back()->withErrors(["Impossible d'ajouter " . $request->libelle . ". Veuillez réessayer!!"]);
+        }
     }
 
     /**
@@ -51,7 +72,7 @@ class SignaturesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
     }
 
     /**
@@ -59,6 +80,13 @@ class SignaturesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $signe = Signatures::findOrFail($id);
+        $imagePath = public_path('signatures/'.$signe->signature);
+        if (file_exists($imagePath)) {
+            unlink($imagePath);
+        }
+        $signe->delete();
+
+        return back()->with('succes', "La suppression e été effectué");
     }
 }
