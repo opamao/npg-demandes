@@ -12,7 +12,9 @@ class SignaturesController extends Controller
      */
     public function index()
     {
-        return view('signature.signature-list');
+        $signature = Signatures::all();
+
+        return view('signature.signature-list', compact('signature'));
     }
 
     /**
@@ -30,9 +32,11 @@ class SignaturesController extends Controller
     {
         $roles = [
             'libelle' => 'required',
+            'signature' => 'required',
         ];
         $customMessages = [
-            'libelle.required' => "Veuillez saisir le libelle de le pays",
+            'libelle.required' => __('messages.libelle_signature'),
+            'signature.required' => __('messages.charge_signature'),
         ];
         $request->validate($roles, $customMessages);
 
@@ -45,9 +49,9 @@ class SignaturesController extends Controller
         $signature->signature = $imageSignature;
 
         if ($signature->save()) {
-            return back()->with('succes',  "Vous avez ajouter " . $request->libelle);
+            return back()->with('succes',  __('messages.success_signature') . $request->libelle);
         } else {
-            return back()->withErrors(["Impossible d'ajouter " . $request->libelle . ". Veuillez réessayer!!"]);
+            return back()->withErrors([__('messages.errors_signature')]);
         }
     }
 
@@ -87,6 +91,6 @@ class SignaturesController extends Controller
         }
         $signe->delete();
 
-        return back()->with('succes', "La suppression e été effectué");
+        return back()->with('succes', __('messages.delete_signature'));
     }
 }

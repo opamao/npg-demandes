@@ -1,0 +1,21 @@
+
+**** Log file opened at 2025-01-15 16:21:23.120432 UTC+00:00 (Greenwich), Encoding UTF-8
+NW RFC Library: SDK variant, Release 750 Patch Level 15
+Compilation date          : Nov  1 2024 23:51:57
+CPIC library              : 754.2024.07.29 version 3
+NI library                : 40
+Kernel Release            : 754 Patch Level 419
+Current working directory : C:\xampp\htdocs\npg-demandes\public
+Program                   : php
+Process ID                : 14828
+User                      : nguessan.yapi
+Hardware                  : PC with Windows NT 24x AMD64 Level 6 (Mod 183 Step 1)
+Binary Type               : 64bit
+Operating_system          : Windows NT 10.0
+Hostname                  : IT12
+IP address                : 10.10.32.12
+IPv6 address              : ::1
+Global trace level        : 0
+
+2025-01-15 16:21:23.121311 [10580] >> Info entry
+	Did not find config file C:\xampp\htdocs\npg-demandes\public\sapnwrfc.ini.
