@@ -19,15 +19,18 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
-        'image',
-        'username',
-        'website',
-        'currency',
-        'phone',
+        'email', // nullable
+        'image', // represente l'image et le logo selon le profil
+        'username', // nullable
+        'website', // nullable
+        'currency', // nullable
+        'phone', // nullable
         'type',
         'status',
         'password',
+        'division_id', // nullable
+        'pays_id', // nullable
+        'code', // nullable
     ];
 
     /**

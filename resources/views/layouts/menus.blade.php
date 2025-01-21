@@ -150,6 +150,18 @@
                        <!-- User Management -->
                        <li class="menu-title"><span>{{ __('messages.user-management') }}</span></li>
                        <li>
+                           <a class="{{ Request::is('articles') ? 'active' : '' }}" href="{{ url('articles') }}"><i
+                                   class="fe fe-package"></i> <span>{{ __('messages.items') }}</span></a>
+                       </li>
+                       <li>
+                           <a class="{{ Request::is('pays') ? 'active' : '' }}" href="{{ url('pays') }}"><i
+                                   class="fe fe-user"></i> <span>{{ __('messages.pays') }}</span></a>
+                       </li>
+                       <li>
+                           <a class="{{ Request::is('division') ? 'active' : '' }}" href="{{ url('division') }}"><i
+                                   class="fe fe-user"></i> <span>Division</span></a>
+                       </li>
+                       <li>
                            <a class="{{ Request::is('users') ? 'active' : '' }}" href="{{ url('users') }}"><i
                                    class="fe fe-user"></i> <span>{{ __('messages.users') }}</span></a>
                        </li>

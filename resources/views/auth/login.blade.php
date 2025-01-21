@@ -596,7 +596,7 @@
     <script src="{{ URL::asset('') }}assets/js/layout.js" type="27150c5752b1fd68cef898e1-text/javascript"></script>
 </head>
 
-<body style="background-color: #018ea963;">
+<body style="background-color: #018ea9;">
 
     <!-- Main Wrapper -->
     <div class="main-wrapper login-body">

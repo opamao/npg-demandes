@@ -13,24 +13,40 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        $sap = app(Sap::class);
+        // $parameters = [
+        //     'ashost' => 'my.sap.system.local',
+        //     'sysnr'  => '00',
+        //     'client' => '123',
+        //     'user' => 'DEMO',
+        //     'passwd' => 'XXXX',
+        // ];
 
-        $connection = $sap->open();
+        // // connect
+        // $connection = new SAPNWRFC\Connection($parameters);
 
-        $function = $connection->fm('BAPI_USER_GET_DETAIL');
+        // // do work here
 
-        // Get function description.
-        print_r($function->description());
+        // // close the connection
+        // $connection->close();
 
-        // Add import parameter.
-        $function->param('USERNAME', 'USER');
+        // $sap = app(Sap::class);
+        // $connection = $sap->open();
+        // // dd('next');
 
-        // Perform function call and retrieve result.
-        $results = $function->execute();
+        // $function = $connection->fm('ZBAPI_GET_STOCK_RESERVE');
 
-        $connection->close();
+        // // Get function description.
+        // dd($function->description());
 
-        // return view('customers.customers');
+        // // Add import parameter.
+        // $function->param('USERNAME', 'USER');
+
+        // // Perform function call and retrieve result.
+        // $results = $function->execute();
+
+        // $connection->close();
+
+        return view('customers.customers');
     }
 
     /**

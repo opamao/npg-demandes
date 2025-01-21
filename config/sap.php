@@ -4,12 +4,12 @@ return [
 
     'connections' => [
         'default' => [
-            'ashost'    => env('SAP_HOST', 'localhost'),
-            'sysnr'     => env('SAP_SYSTEM', '00'),
+            'ashost'    => env('SAP_HOST', '10.10.2.40'),
+            'sysnr'     => env('SAP_SYSTEM', 'DN0'),
             'lang'      => env('SAP_LANGUAGE', 'EN'),
-            'client'    => env('SAP_CLIENT'),
-            'user'      => env('SAP_USERNAME'),
-            'passwd'    => env('SAP_PASSWORD'),
+            'client'    => env('SAP_CLIENT', '100'),
+            'user'      => env('SAP_USERNAME', 'Gimad'),
+            'passwd'    => env('SAP_PASSWORD', '2024@basis'),
         ]
     ],
 

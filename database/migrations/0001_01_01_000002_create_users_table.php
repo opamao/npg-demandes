@@ -13,15 +13,20 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email')->unique()->nullable();
+            $table->string('phone')->unique()->nullable();
             $table->string('image')->nullable();
             $table->string('username')->nullable();
             $table->string('website')->nullable();
             $table->string('currency')->nullable();
-            $table->string('phone')->unique()->nullable();
             $table->string('type')->nullable()->comment('customer, user');
             $table->string('status')->comment('Active, Inactive')->default('Active');
-            $table->string('name');
-            $table->string('email')->unique()->nullable();
+            $table->string('code')->nullable();
+            $table->unsignedBigInteger('division_id')->nullable();
+            $table->foreign('division_id')->references('id')->on('divisions');
+            $table->unsignedBigInteger('pays_id')->nullable();
+            $table->foreign('pays_id')->references('id')->on('pays');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
@@ -52,5 +57,10 @@ return new class extends Migration
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['division_id', 'pays_id']);
+            $table->dropColumn('division_id');
+            $table->dropColumn('pays_id');
+        });
     }
 };

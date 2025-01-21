@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\SignaturesController;
@@ -139,9 +140,17 @@ Route::get('profile', function () {
 Route::get('settings', function () {
     return view('profile.settings');
 });
+Route::get('pays', function () {
+    return view('pays.pays');
+});
+Route::get('division', function () {
+    return view('divisions.divisions');
+});
 
 Route::fallback(function () {
     return response()->view('layouts.error-404');
 });
+
+Route::resource('articles', ArticlesController::class);
 
 Route::post('language-switch', [LanguageController::class, 'languageSwitch'])->name('language.switch');
