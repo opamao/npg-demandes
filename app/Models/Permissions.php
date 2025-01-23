@@ -10,11 +10,10 @@ class Permissions extends Model
     use HasFactory;
 
     protected $fillable = [
-        'signature_name',
-        'signature',
-        'status',
-        'role_id',
+        'libelle_permission',
     ];
 
     protected $table = 'permissions';
+
+    
 }

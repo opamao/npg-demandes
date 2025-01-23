@@ -159,7 +159,7 @@
                             <div class="card-body">
                                 <div class="grid-info-item active-items">
                                     <div class="grid-info">
-                                        <span>Total SS10</span>
+                                        <span>Total SS20</span>
                                         <h4>{{ $ss20articles }}</h4>
                                     </div>
                                     <div class="grid-head-icon">
@@ -174,7 +174,7 @@
                             <div class="card-body">
                                 <div class="grid-info-item active-items">
                                     <div class="grid-info">
-                                        <span>Total SS11</span>
+                                        <span>Total SS21</span>
                                         <h4>{{ $ss21articles }}</h4>
                                     </div>
                                     <div class="grid-head-icon">
@@ -189,7 +189,7 @@
                             <div class="card-body">
                                 <div class="grid-info-item active-items">
                                     <div class="grid-info">
-                                        <span>Total SS12</span>
+                                        <span>Total SS22</span>
                                         <h4>{{ $ss22articles }}</h4>
                                     </div>
                                     <div class="grid-head-icon">
