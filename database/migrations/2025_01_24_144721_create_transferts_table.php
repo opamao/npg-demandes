@@ -17,7 +17,13 @@ return new class extends Migration
             $table->foreign('client_envoie_id')->references('id')->on('users');
             $table->unsignedBigInteger('client_recu_id');
             $table->foreign('client_recu_id')->references('id')->on('users');
+            $table->string('code_article');
+            $table->string('designation');
+            $table->string('type_article');
+            $table->integer('quantite_demande');
+            $table->integer('quantite_recu');
             $table->integer('quantite');
+            $table->string('unite');
             $table->string('division_par');
             $table->string('division_pour');
             $table->unsignedBigInteger('stock_id');
